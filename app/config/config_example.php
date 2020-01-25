@@ -8,6 +8,9 @@
 // define('BASEURL', 'http://localhost/phpmvc/13-search/public');
 define('BASEURL', '');
 
+// 1,2,3,4,5,6
+explode(",", $diatas);
+
 
 // Konfigurasi Database
 define('DB_HOST', 'localhost');
