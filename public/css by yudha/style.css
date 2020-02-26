@@ -1,0 +1,115 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: work sans;
+}
+
+.row:after {
+	content: "";
+	clear: both;
+	display: table;
+}
+
+[class*="col-"]{
+	float: left;
+}
+
+.col-1 {width:8.33%;}
+.col-2 {width:16.66%}
+.col-3 {width:25%;}
+.col-4 {width:33.3%;}
+.col-5 {width:41.66%;}
+.col-6 {width:50%;}
+.col-7 {width:58.33%;}
+.col-8 {width:66.66%;}
+.col-9 {width:75%;}
+.col-10 {width:83.33%;}
+.col-11 {width:91.6%;}
+.col-12 {width:100%;}
+
+.btn-gradient {
+  margin-top: 30px;
+  padding: 1.2rem 1.7rem;
+  border-radius: 30px;
+  border: none;
+  color: #fff;
+  font-size: .9em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: .7s;
+  letter-spacing: 1.5px;
+  outline: none;
+  background: #b224ef;
+  background: -webkit-linear-gradient(331deg, #b224ef 11%, #5055fa 55%);
+  background: -o-linear-gradient(331deg, #b224ef 11%, #5055fa 55%);
+  background: linear-gradient(119deg, #b224ef 11%, #5055fa 55%);
+  background-size: 101% auto;
+}
+body{
+	background-color: #92DBFF;
+	
+} 
+.loginimage{
+	height: 49.5rem;
+	width: 68%;
+}
+.bglogin{
+	background-image: url(../image/Login.png);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.loginpage{
+	width: 32%;
+}
+.loginform{
+	height: 25rem;
+	margin-top: 10rem;
+	width: 25rem;
+	background-color: #DAF3FF;
+	border-radius: 70px;
+	background-image: url(../image/image1.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+form{
+	margin: 25px;
+}
+.logintulisan{
+	padding-top: 20px;
+	padding-bottom: 27px;
+	text-align: center;
+	font-family: garamond;
+	font-size: 30px;
+}
+.form_login{
+	width: 18rem;
+	height: 30px;
+	margin: 10px 5px;
+	border: 1px solid;
+	border-color: #009DF8;
+	border-radius: 3px;
+
+}
+.dropdown{
+	margin-top: 6px;
+	margin-left: 6px;
+}
+button{
+	margin: 4rem 50px;
+	width: 70%;
+	height: 2rem;
+	border: 2px solid;
+	border-color: #009DF8;
+	border-radius: 10px;
+	transition: all .4s ease-in-out;
+	transition-property: background;
+}
+button:hover{
+	cursor: pointer;
+	background-color: #009DF8;
+}
