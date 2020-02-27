@@ -55,7 +55,7 @@ body{
 } 
 .loginimage{
 	height: 49.5rem;
-	width: 68%;
+	width: 64%;
 }
 .bglogin{
 	background-image: url(../image/Login.png);
@@ -69,6 +69,7 @@ body{
 .loginform{
 	height: 25rem;
 	margin-top: 10rem;
+	margin-left: 0rem;
 	width: 25rem;
 	background-color: #DAF3FF;
 	border-radius: 70px;
@@ -86,14 +87,19 @@ form{
 	font-family: garamond;
 	font-size: 30px;
 }
-.form_login{
+.form_input{
 	width: 18rem;
 	height: 30px;
 	margin: 10px 5px;
 	border: 1px solid;
 	border-color: #009DF8;
 	border-radius: 3px;
-
+	background-color: #ecf0f1;
+	transition: all .4s ease-in-out;
+	transition-property: background: 
+}
+.form_input:hover{
+	background-color: #ffff;
 }
 .dropdown{
 	margin-top: 6px;
@@ -106,6 +112,8 @@ button{
 	border: 2px solid;
 	border-color: #009DF8;
 	border-radius: 10px;
+	font-family: arcade;
+	font-size: 18px;
 	transition: all .4s ease-in-out;
 	transition-property: background;
 }

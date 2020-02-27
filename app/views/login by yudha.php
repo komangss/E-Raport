@@ -16,8 +16,8 @@
 						<div class="loginform">
 							<div class="logintulisan"><strong>User Login</strong></div>
 							<form action="">
-								<input type="text" name="username" class="form_login" placeholder="Username/Nik/Nis">
-								<input type="password" name="username" class="form_login" placeholder="Password">
+								<input type="text" name="username" class="form_input" placeholder="Username/Nik/Nis">
+								<input type="password" name="username" class="form_input" placeholder="Password">
 								<div class="dropdown">
 									<select name="" id="">
 										<option value="">Choose</option>
