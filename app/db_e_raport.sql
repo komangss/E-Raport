@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 25, 2020 at 09:56 AM
+-- Generation Time: Mar 01, 2020 at 08:34 AM
 -- Server version: 10.4.6-MariaDB
 -- PHP Version: 7.3.9
 
@@ -36,6 +36,19 @@ CREATE TABLE `data_kelas` (
   `id_wali` int(11) NOT NULL,
   `id_data_data_siswa` varchar(255) NOT NULL,
   `id_tahun` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `data_raport`
+--
+
+CREATE TABLE `data_raport` (
+  `id` int(11) NOT NULL,
+  `id_guru_pembuat` int(11) NOT NULL,
+  `created at` date NOT NULL,
+  `deleted at` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -154,6 +167,14 @@ CREATE TABLE `tahun` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
+-- Dumping data for table `tahun`
+--
+
+INSERT INTO `tahun` (`id_tahun`, `tahun`) VALUES
+(1, '2019'),
+(2, '2020');
+
+--
 -- Indexes for dumped tables
 --
 
@@ -162,6 +183,12 @@ CREATE TABLE `tahun` (
 --
 ALTER TABLE `data_kelas`
   ADD PRIMARY KEY (`id_data_kelas`);
+
+--
+-- Indexes for table `data_raport`
+--
+ALTER TABLE `data_raport`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `guru`
@@ -218,6 +245,12 @@ ALTER TABLE `data_kelas`
   MODIFY `id_data_kelas` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `data_raport`
+--
+ALTER TABLE `data_raport`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `guru`
 --
 ALTER TABLE `guru`
@@ -257,7 +290,7 @@ ALTER TABLE `siswa`
 -- AUTO_INCREMENT for table `tahun`
 --
 ALTER TABLE `tahun`
-  MODIFY `id_tahun` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_tahun` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
