@@ -19,7 +19,7 @@ class Auth extends Controller
         if ($_POST['role'] == '1') {// siswa
             $this->model('Auth_model')->loginSiswa($_POST);
         } else if ($_POST['role'] == '2') {
-            
+            $this->model('Auth_model')->loginGuru($_POST);    
         }
     }
 

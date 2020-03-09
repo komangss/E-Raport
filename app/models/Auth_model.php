@@ -13,8 +13,8 @@ class Auth_model
     function loginSiswa($input)
     {
         // Validate the login form inputs.
-        $this->db->query('SELECT * FROM ' . $this->table_siswa . ' WHERE nama_siswa=:nama_siswa');
-        $this->db->bind('nama_siswa', $input['username']);
+        $this->db->query('SELECT * FROM ' . $this->table_siswa . ' WHERE nis=:input_nis');
+        $this->db->bind('input_nis', $input['username']);
 
         $result = $this->db->single();
 
@@ -32,7 +32,7 @@ class Auth_model
                     "id_siswa" => $result['id_siswa']
                 ];
                 Session::put_session("session_data", $session_data);
-                header("Location: ", "/siswa"); // header nya gamaw
+                header('Location: ' . BASEURL . '/siswa'); // header nya gamaw
             } else {
                 // password salah
                 echo "password salah";
@@ -50,5 +50,34 @@ class Auth_model
 
     function loginGuru($input)
     {
+        // Validate the login form inputs.
+        $this->db->query('SELECT * FROM ' . $this->table_guru . ' WHERE nip=:nip_guru');
+        $this->db->bind('nip_guru', $input['username']);
+
+        $result = $this->db->single();
+
+        if ($result) {
+            // user nya ada... cek passwordnya
+
+            // UNTUK SEMENTARA PAKAI CEK BIASA DULU PAS DI REGISTER PASSWORD DI PAKAI HASh BARU 
+            // PAKAI password_verify
+            // if (password_verify($input['password'], $result['password'])) {
+
+            if ($result['password'] == $input['password']) {
+                // buat session
+                $session_data = [
+                    "is_active" => 1,
+                    "id_guru" => $result['id_guru']
+                ];
+                Session::put_session("session_data", $session_data);
+                header('Location: ' . BASEURL . '/siswa'); // header nya gamaw
+            } else {
+                // password salah
+                echo "password salah";
+            }
+        } else {
+            // ga ada user yang terdaftar
+            echo "ga ada user yang terdaftar";
+        }
     }
 }
