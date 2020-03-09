@@ -9,7 +9,7 @@
 <body>
     <!-- Get Data Siswa -->
     <h1>get Data Siswa</h1>
-    <?php var_dump($data['data_siswa']); ?>
+    <?php var_dump($data['data_siswa']); echo "\nsession -> :"; var_dump($data['session_data']); ?>
 
     <h1>Insert Data Siswa</h1>
     

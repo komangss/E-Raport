@@ -1,12 +1,15 @@
 <?php
 
+require __DIR__ . '\..\utility\Session.php';
+
 class Siswa extends Controller
 {
     public function index()
     {
         // Get All
         $data['data_siswa'] = $this->model('Siswa_model')->getAllSiswa();
-
+        Session::init_session();
+        $data['session_data'] = Session::get_session("session_data");
         // get siswa id 1
         $data["siswa_id_1"] = $this->model("Siswa_model")->getSiswaById(1);
 

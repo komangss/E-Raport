@@ -18,8 +18,6 @@ class App {
         // kita sudah tau ya controllernya apa. sekarang kita panggil controllernya
         require_once '../app/controllers/'. $this->controller. '.php';
         $this->controller = new $this->controller;
-        
-
         // method
         if (isset($url[1])) {
             // kita cek ada ga methodnya
