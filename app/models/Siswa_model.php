@@ -16,6 +16,12 @@ class Siswa_model
         return $this->db->resultSet();
     }
 
+    public function getAllSiswaNoKelas()
+    {
+        $this->db->query('SELECT * FROM ' . $this->table . ' WHERE is_kelas_already=0');
+        return $this->db->resultSet();
+    }
+
     public function getSiswaById($id)
     {
         $this->db->query('SELECT * FROM ' . $this->table . ' WHERE id_siswa=:id');
@@ -26,12 +32,13 @@ class Siswa_model
     public function insertDataSiswa($data)
     {
         $query = "INSERT INTO siswa
-                    VALUES ('', :nama_siswa, :nis, :password)";
+                    VALUES ('', :nama_siswa, :nis, :password, :is_kelas_already)";
 
         $this->db->query($query);
         $this->db->bind('nama_siswa', $data['nama']);
         $this->db->bind('nis', $data['nis']);
         $this->db->bind('password', $data['password']);
+        $this->db->bind('is_kelas_already', $data['is_kelas_already']);
 
         $this->db->execute();
 
@@ -73,6 +80,19 @@ class Siswa_model
         $this->db->query($query);
         $this->db->bind('id', $id);
         
+        return $this->db->rowCount();
+    }
+
+    public function updateIsKelasAlready($id)
+    {
+        $query = "UPDATE siswa SET
+                    is_kelas_already = 1
+                  WHERE id_siswa = $id";
+
+        $this->db->query($query);
+
+        $this->db->execute();
+
         return $this->db->rowCount();
     }
 }

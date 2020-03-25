@@ -17,6 +17,7 @@
         <input type="text" name="nama" placeholder="nama">
         <input type="text" name="nis" placeholder="nis">
         <input type="password" name="password" placeholder="password">
+        <input type="text" name="is_kelas_already" placeholder="apakah sudah punya kelas ( jika iya maka 1 )">
         <button type="submit">insert</button>
     </form>
 
