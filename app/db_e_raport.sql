@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 01, 2020 at 08:34 AM
--- Server version: 10.4.6-MariaDB
--- PHP Version: 7.3.9
+-- Waktu pembuatan: 25 Mar 2020 pada 15.47
+-- Versi server: 10.1.39-MariaDB
+-- Versi PHP: 7.3.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,7 +25,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `data_kelas`
+-- Struktur dari tabel `data_kelas`
 --
 
 CREATE TABLE `data_kelas` (
@@ -38,23 +38,18 @@ CREATE TABLE `data_kelas` (
   `id_tahun` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- --------------------------------------------------------
-
 --
--- Table structure for table `data_raport`
+-- Dumping data untuk tabel `data_kelas`
 --
 
-CREATE TABLE `data_raport` (
-  `id` int(11) NOT NULL,
-  `id_guru_pembuat` int(11) NOT NULL,
-  `created at` date NOT NULL,
-  `deleted at` date DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+INSERT INTO `data_kelas` (`id_data_kelas`, `id_kelas`, `id_jurusan`, `index`, `id_wali`, `id_data_data_siswa`, `id_tahun`) VALUES
+(1, 1, 1, 1, 1, '1,2', 1),
+(2, 1, 1, 2, 2, '3,4,5', 1);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `guru`
+-- Struktur dari tabel `guru`
 --
 
 CREATE TABLE `guru` (
@@ -67,10 +62,18 @@ CREATE TABLE `guru` (
   `id_mapel` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data untuk tabel `guru`
+--
+
+INSERT INTO `guru` (`id_guru`, `nama_guru`, `nip`, `password`, `is_wali_kelas`, `id_kelas`, `id_mapel`) VALUES
+(1, 'bu putri', 123, '123', 1, 1, 1),
+(2, 'pak pras', 1, '123', 0, 0, 2);
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `jurusan`
+-- Struktur dari tabel `jurusan`
 --
 
 CREATE TABLE `jurusan` (
@@ -79,17 +82,17 @@ CREATE TABLE `jurusan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `jurusan`
+-- Dumping data untuk tabel `jurusan`
 --
 
 INSERT INTO `jurusan` (`id_jurusan`, `nama_jurusan`) VALUES
-(1, 'RPL 1'),
-(2, 'RPL 2');
+(1, 'RPL'),
+(2, 'MM');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kelas`
+-- Struktur dari tabel `kelas`
 --
 
 CREATE TABLE `kelas` (
@@ -98,18 +101,17 @@ CREATE TABLE `kelas` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `kelas`
+-- Dumping data untuk tabel `kelas`
 --
 
 INSERT INTO `kelas` (`id_kelas`, `nama_kelas`) VALUES
 (1, 'X'),
-(2, 'XI'),
-(3, 'XII');
+(2, 'XI');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mapel`
+-- Struktur dari tabel `mapel`
 --
 
 CREATE TABLE `mapel` (
@@ -122,7 +124,7 @@ CREATE TABLE `mapel` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `nilai_siswa`
+-- Struktur dari tabel `nilai_siswa`
 --
 
 CREATE TABLE `nilai_siswa` (
@@ -137,28 +139,35 @@ CREATE TABLE `nilai_siswa` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `siswa`
+-- Struktur dari tabel `siswa`
 --
 
 CREATE TABLE `siswa` (
   `id_siswa` int(11) NOT NULL,
   `nama_siswa` varchar(255) NOT NULL,
   `nis` int(11) NOT NULL,
-  `password` varchar(255) NOT NULL
+  `password` varchar(255) NOT NULL,
+  `is_kelas_already` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `siswa`
+-- Dumping data untuk tabel `siswa`
 --
 
-INSERT INTO `siswa` (`id_siswa`, `nama_siswa`, `nis`, `password`) VALUES
-(1, 'hsdvfhsdbfbsdfbksjdb', 123, '123'),
-(2, 'angga', 1234, '1234');
+INSERT INTO `siswa` (`id_siswa`, `nama_siswa`, `nis`, `password`, `is_kelas_already`) VALUES
+(1, 'alex', 123, '123', 1),
+(2, 'Antonio Komang Yudistira', 1, '123', 1),
+(3, 'ferr', 2, '133', 1),
+(4, 'angga', 3, '123', 1),
+(5, 'yudha', 4, '123', 1),
+(6, 'ghazy', 5, '123', 0),
+(7, 'dewade', 6, '123', 0),
+(8, 'dimas', 8, '123', 0);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tahun`
+-- Struktur dari tabel `tahun`
 --
 
 CREATE TABLE `tahun` (
@@ -167,130 +176,117 @@ CREATE TABLE `tahun` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tahun`
+-- Dumping data untuk tabel `tahun`
 --
 
 INSERT INTO `tahun` (`id_tahun`, `tahun`) VALUES
-(1, '2019'),
-(2, '2020');
+(1, '2020');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `data_kelas`
+-- Indeks untuk tabel `data_kelas`
 --
 ALTER TABLE `data_kelas`
   ADD PRIMARY KEY (`id_data_kelas`);
 
 --
--- Indexes for table `data_raport`
---
-ALTER TABLE `data_raport`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `guru`
+-- Indeks untuk tabel `guru`
 --
 ALTER TABLE `guru`
   ADD PRIMARY KEY (`id_guru`),
   ADD UNIQUE KEY `nip` (`nip`);
 
 --
--- Indexes for table `jurusan`
+-- Indeks untuk tabel `jurusan`
 --
 ALTER TABLE `jurusan`
   ADD PRIMARY KEY (`id_jurusan`);
 
 --
--- Indexes for table `kelas`
+-- Indeks untuk tabel `kelas`
 --
 ALTER TABLE `kelas`
   ADD PRIMARY KEY (`id_kelas`);
 
 --
--- Indexes for table `mapel`
+-- Indeks untuk tabel `mapel`
 --
 ALTER TABLE `mapel`
   ADD PRIMARY KEY (`id_mapel`);
 
 --
--- Indexes for table `nilai_siswa`
+-- Indeks untuk tabel `nilai_siswa`
 --
 ALTER TABLE `nilai_siswa`
   ADD PRIMARY KEY (`id_nilai_siswa`);
 
 --
--- Indexes for table `siswa`
+-- Indeks untuk tabel `siswa`
 --
 ALTER TABLE `siswa`
   ADD PRIMARY KEY (`id_siswa`),
   ADD UNIQUE KEY `nis` (`nis`);
 
 --
--- Indexes for table `tahun`
+-- Indeks untuk tabel `tahun`
 --
 ALTER TABLE `tahun`
   ADD PRIMARY KEY (`id_tahun`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `data_kelas`
+-- AUTO_INCREMENT untuk tabel `data_kelas`
 --
 ALTER TABLE `data_kelas`
-  MODIFY `id_data_kelas` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_data_kelas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `data_raport`
---
-ALTER TABLE `data_raport`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `guru`
+-- AUTO_INCREMENT untuk tabel `guru`
 --
 ALTER TABLE `guru`
-  MODIFY `id_guru` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_guru` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `jurusan`
+-- AUTO_INCREMENT untuk tabel `jurusan`
 --
 ALTER TABLE `jurusan`
   MODIFY `id_jurusan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `kelas`
+-- AUTO_INCREMENT untuk tabel `kelas`
 --
 ALTER TABLE `kelas`
-  MODIFY `id_kelas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_kelas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `mapel`
+-- AUTO_INCREMENT untuk tabel `mapel`
 --
 ALTER TABLE `mapel`
   MODIFY `id_mapel` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `nilai_siswa`
+-- AUTO_INCREMENT untuk tabel `nilai_siswa`
 --
 ALTER TABLE `nilai_siswa`
   MODIFY `id_nilai_siswa` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `siswa`
+-- AUTO_INCREMENT untuk tabel `siswa`
 --
 ALTER TABLE `siswa`
-  MODIFY `id_siswa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_siswa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT for table `tahun`
+-- AUTO_INCREMENT untuk tabel `tahun`
 --
 ALTER TABLE `tahun`
-  MODIFY `id_tahun` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_tahun` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
