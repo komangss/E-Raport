@@ -24,9 +24,11 @@ class DataKelas extends Controller
         $idIdSiswaArray = [];
         for ($i=0; $i < $totalSiswaCreated; $i++) { 
             $idIdSiswaArray[$i] = $_POST['idSiswa'.($i+1)];
-            // update is kelas already mereka
+            // update is kelas already mereka 
             $this->model('Siswa_model')->updateIsKelasAlready($idIdSiswaArray[$i]);
         }
+        // update is wali kelas
+        $this->model('Guru_model')->updateIsWali($_POST['guru']);
 
         $_POST['id_data_data_siswa'] = implode(',', $idIdSiswaArray);
 

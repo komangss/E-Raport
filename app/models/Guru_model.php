@@ -81,4 +81,17 @@ class Guru_model
         $this->db->query("SELECT * FROM $this->table WHERE is_wali_kelas=0");
         return $this->db->resultSet();
     }
+
+    public function updateIsWali($id)
+    {
+        $query = "UPDATE $this->table SET
+                    is_wali_kelas = 1
+                  WHERE id_guru = $id";
+
+        $this->db->query($query);
+
+        $this->db->execute();
+
+        return $this->db->rowCount();
+    }
 }
