@@ -15,6 +15,7 @@ class Auth extends Controller
 
     public function login()
     {
+        // TODO: cek apakah ini berasal dari webnya
         AuthUtility::checkUnauthenticated();
         if ($_POST['role'] == '1') {// siswa
             $this->model('Auth_model')->loginSiswa($_POST);

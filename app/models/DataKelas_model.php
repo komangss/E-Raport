@@ -54,4 +54,13 @@ class DataKelas_model
         // buat ngembaliin data
         return $this->db->rowCount();
     }
+
+    public function getDataKelasById($id)
+    {
+        $this->db->query("SELECT * FROM data_kelas WHERE id_data_kelas = :id");
+        $this->db->bind("id", $id);
+        $this->db->execute();
+
+        return $this->db->single();
+    }
 }

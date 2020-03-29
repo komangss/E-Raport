@@ -2,24 +2,30 @@
 
 class Kelas extends Controller
 {
-    public function index()
+    public function index($id_kelas)
     {
-        // Get All
-        $data['data_kelas'] = $this->model('Kelas_model')->getAllKelas();
-
-        // get siswa id 1
-        $data["kelas_id_1"] = $this->model("Kelas_model")->getKelasById(1);
-
-        if ($_POST['keyword']) {
-            $data['kelasFromSearch'] = $this->model('Kelas_model')->searchKelas($_POST
-        );
+        if (!isset($id_kelas)) {
+            // Get All
+            $data['data_kelas'] = $this->model('Kelas_model')->getAllKelas();
+    
+            // get siswa id 1
+            $data["kelas_id_1"] = $this->model("Kelas_model")->getKelasById(1);
+    
+            if ($_POST['keyword']) {
+                $data['kelasFromSearch'] = $this->model('Kelas_model')->searchKelas($_POST
+            );
+            } else {
+                $data['kelasFromSearch'] = "Kelas tidak tersedia";
+            }
+    
+            $this->view('templates/header', $data);
+            $this->view('kelas/index', $data);
+            $this->view('templates/footer');
         } else {
-            $data['kelasFromSearch'] = "Kelas tidak tersedia";
+            // get siswa id 1
+            $data["kelas_id_1"] = $this->model("Kelas_model")->getKelasById($id_kelas);
+            var_dump($data); die;
         }
-
-        $this->view('templates/header', $data);
-        $this->view('kelas/index', $data);
-        $this->view('templates/footer');
     }
 
     public function insert()

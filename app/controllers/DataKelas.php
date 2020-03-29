@@ -1,25 +1,36 @@
 <?php
+
+require __DIR__ . '\..\utility\Session.php';
+
 class DataKelas extends Controller
 {
-    public function index()
+    public function index($id_data_kelas)
     {
-        $data['data_kelas'] = $this->model('DataKelas_model')->getAllDataKelas();
-        // var_dump($data['data_kelas'][0]['nama_kelas']);die;
+        Session::init_session();
+        if ($id_data_kelas) {
+            $data_kelas = $this->model('DataKelas_model')->getDataKelasById($id_data_kelas);
+            // cek apakah yang masuk ke sini itu walinya?
+            if ($data_kelas['id_wali'] == Session::get_session("session_data")['id_guru']) {
+                // buat view untuk data kelas guru ini
+            } else {
+                echo "kamu bukan wali kelas ini ngapain kesini??";
+            }
+        } else {
+            $data['data_kelas'] = $this->model('DataKelas_model')->getAllDataKelas();
+    
+            // data for insert
+            $data['kelas'] = $this->model('Kelas_model')->getAllKelas();
+            $data['jurusan'] = $this->model('Jurusan_model')->getAllJurusan();
+            $data['guru_not_wali'] = $this->model("Guru_model")->getGuruNotWaliKelas();
+            $data['tahun'] = $this->model("Tahun_model")->getAllTahun();
+            $data['data_siswa'] = $this->model('Siswa_model')->getAllSiswaNoKelas();
 
-        // data for insert
-        $data['kelas'] = $this->model('Kelas_model')->getAllKelas();
-        $data['jurusan'] = $this->model('Jurusan_model')->getAllJurusan();
-        $data['guru_not_wali'] = $this->model("Guru_model")->getGuruNotWaliKelas();
-        $data['tahun'] = $this->model("Tahun_model")->getAllTahun();
-        $data['data_siswa'] = $this->model('Siswa_model')->getAllSiswaNoKelas();
-        // var_dump($data['tahun']); die;
-
-        $this->view('data_kelas/index', $data);
+            $this->view('data_kelas/index', $data);
+        }
     }
 
     public function insert()
     {
-        
         $totalSiswaCreated = (int) $_POST['totalSiswaCreated'];
         $idIdSiswaArray = [];
         for ($i=0; $i < $totalSiswaCreated; $i++) { 

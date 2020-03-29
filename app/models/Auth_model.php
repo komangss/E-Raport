@@ -56,6 +56,7 @@ class Auth_model
 
         $result = $this->db->single();
 
+
         if ($result) {
             // user nya ada... cek passwordnya
 
@@ -64,13 +65,21 @@ class Auth_model
             // if (password_verify($input['password'], $result['password'])) {
 
             if ($result['password'] == $input['password']) {
+                
+                $this->db->query("SELECT * FROM data_kelas WHERE id_wali = :id");
+                $this->db->bind("id", $result['id_guru']);
+                $this->db->execute();
+
+                $result_kelas = $this->db->single();
+
                 // buat session
                 $session_data = [
                     "is_active" => 1,
-                    "id_guru" => $result['id_guru']
+                    "id_guru" => $result['id_guru'],
+                    "id_data_kelas" => $result_kelas['id_data_kelas']
                 ];
                 Session::put_session("session_data", $session_data);
-                header('Location: ' . BASEURL . '/siswa'); // header nya gamaw
+                header('Location: ' . BASEURL . '/guru/dashboard'); // header nya gamaw
             } else {
                 // password salah
                 echo "password salah";
