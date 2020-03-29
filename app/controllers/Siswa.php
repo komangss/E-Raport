@@ -6,6 +6,16 @@ class Siswa extends Controller
 {
     public function index()
     {
+        $this->view('siswa/siswa');
+    }
+
+    public function showraport()
+    {
+        $this->view('siswa/show_raport');
+    }
+
+    public function be()
+    {
         // Get All
         $data['data_siswa'] = $this->model('Siswa_model')->getAllSiswa();
         Session::init_session();
@@ -14,8 +24,9 @@ class Siswa extends Controller
         $data["siswa_id_1"] = $this->model("Siswa_model")->getSiswaById(1);
 
         if ($_POST['keyword']) {
-            $data['dataSiswaFromSearch'] = $this->model('Siswa_model')->searchDataSiswa($_POST
-        );
+            $data['dataSiswaFromSearch'] = $this->model('Siswa_model')->searchDataSiswa(
+                $_POST
+            );
         } else {
             $data['dataSiswaFromSearch'] = "data siswa nya ga ada";
         }
