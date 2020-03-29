@@ -6,7 +6,8 @@
 
 // Example 
 // define('BASEURL', 'http://localhost/phpmvc/13-search/public');
-define('BASEURL', 'http://localhost/E-Raport/public');
+define('BASEURL', 'http://localhost/E-Raport');
+define('BASEURL_PUBLIC', 'http://localhost/E-Raport/public');
 
 // Konfigurasi Database
 define('DB_HOST', 'localhost');

@@ -4,7 +4,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Login Page</title>
-	<link rel="stylesheet" href="<?= BASEURL; ?>/css_yudha/style.css">
+	<link rel="stylesheet" href="<?= BASEURL_PUBLIC; ?>/css_yudha/style.css">
 </head>
 <body>
 	<div class="wrapper">

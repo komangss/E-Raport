@@ -9,14 +9,14 @@ class App {
     public function __construct(){
         $url = $this->parseURL();
         // kita cek dulu. ada gak sebuah file didalam folder controller yg namanya sesuai dengan nama yg kita tulis disini
-        if ( file_exists('../app/controllers/' . $url[0] . '.php') ) {
+        if ( file_exists('app/controllers/' . $url[0] . '.php') ) {
             $this->controller = $url [0];
             // kita hilangkan controllernya dari elemen arraynya // ini buat nanti supaya kita bisa ambil urlnya
             unset($url[0]); // supaya nanti kita ambil parameternya // jadi nanti saat di vardump array foldernya ilang
             
         }
         // kita sudah tau ya controllernya apa. sekarang kita panggil controllernya
-        require_once '../app/controllers/'. $this->controller. '.php';
+        require_once 'app/controllers/'. $this->controller. '.php';
         $this->controller = new $this->controller;
         // method
         if (isset($url[1])) {
