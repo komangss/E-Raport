@@ -1,0 +1,378 @@
+html {
+    /* isi ini supaya scroll waktu teken tombol di navbar smooth */
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+/* kalo mau buat grid pake ini * */
+
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: Roboto mono;
+}
+
+p {
+    font-family: work sans;
+}
+
+strong {
+    color: #1b1919;
+}
+
+li {
+    list-style: none;
+}
+
+/* supaya ga clear both lagi clear both */
+
+.row:after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+[class*='col-'] {
+    float: left;
+    width: 100%;
+}
+
+/* media query */
+
+@media screen and (min-width: 320px) {
+    .col-sm-1 {
+        width: 8.33%;
+    }
+
+    .col-sm-2 {
+        width: 16.66%;
+    }
+
+    .col-sm-3 {
+        width: 25%;
+    }
+
+    .col-sm-4 {
+        width: 33.33%;
+    }
+
+    .col-sm-5 {
+        width: 41.66%;
+    }
+
+    .col-sm-6 {
+        width: 50%;
+    }
+
+    .col-sm-7 {
+        width: 58.33%;
+    }
+
+    .col-sm-8 {
+        width: 66.66%;
+    }
+
+    .col-sm-9 {
+        width: 75%;
+    }
+
+    .col-sm-10 {
+        width: 83.33%;
+    }
+
+    .col-sm-11 {
+        width: 91.66%;
+    }
+
+    .col-sm-12 {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 640px) {
+    .col-md-1 {
+        width: 8.33%;
+    }
+
+    .col-md-2 {
+        width: 16.66%;
+    }
+
+    .col-md-3 {
+        width: 25%;
+    }
+
+    .col-md-4 {
+        width: 33.33%;
+    }
+
+    .col-md-5 {
+        width: 41.66%;
+    }
+
+    .col-md-6 {
+        width: 50%;
+    }
+
+    .col-md-7 {
+        width: 58.33%;
+    }
+
+    .col-md-8 {
+        width: 66.66%;
+    }
+
+    .col-md-9 {
+        width: 75%;
+    }
+
+    .col-md-10 {
+        width: 83.33%;
+    }
+
+    .col-md-11 {
+        width: 91.66%;
+    }
+
+    .col-md-12 {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 940px) {
+    .col-lg-1 {
+        width: 8.33%;
+    }
+
+    .col-lg-2 {
+        width: 16.66%;
+    }
+
+    .col-lg-3 {
+        width: 25%;
+    }
+
+    .col-lg-4 {
+        width: 33.33%;
+    }
+
+    .col-lg-5 {
+        width: 41.66%;
+    }
+
+    .col-lg-6 {
+        width: 50%;
+    }
+
+    .col-lg-7 {
+        width: 58.33%;
+    }
+
+    .col-lg-8 {
+        width: 66.66%;
+    }
+
+    .col-lg-9 {
+        width: 75%;
+    }
+
+    .col-lg-10 {
+        width: 83.33%;
+    }
+
+    .col-lg-11 {
+        width: 91.66%;
+    }
+
+    .col-lg-12 {
+        width: 100%;
+    }
+}
+
+.btn-gradient {
+    margin-top: 30px;
+    padding: 1.2rem 1.7rem;
+    border-radius: 30px;
+    border: none;
+    color: #fff;
+    font-size: .9em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .7s;
+    letter-spacing: 1.5px;
+    outline: none;
+    background: #2580f8;
+    /* background: -webkit-linear-gradient(331deg, #b224ef 11%, #5055fa 55%); */
+    /* background: -o-linear-gradient(331deg, #b224ef 11%, #5055fa 55%); */
+    background: linear-gradient(119deg, #1871ff 11%, #6084d3 55%);
+    background-size: 101% auto;
+}
+
+.btn-gradient:hover {
+    background-size: 200% auto;
+    background-position: left center;
+}
+
+/* buatan di les. diatas default dari kakaknya */
+
+.wrapper {
+    width: 100%;
+    max-width: 1366px;
+    margin: auto;
+}
+
+.wrapper::before,
+.wrapper::after,
+.row::before,
+.row ::after {
+    display: table;
+}
+
+.row::after,
+.wrapper::after {
+    clear: both;
+}
+
+
+/* bawah buatan sendiri */
+.bg-red {
+    background-color: red;
+}
+
+.bg-menu {
+    height: 90px;
+    background-color: #fff;
+    border-bottom: 1px solid #ececec;
+    position: fixed;
+    /* top 0 left 0 default untuk navbar nya ke atas
+    kalo pengen navbarnya dibawah diubah ganti top jadi bottom */
+    /* kalo pengen ke left isiin left 0 top 0 width 20% height 100% */
+    /* top (default) */
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* left */
+    /* top: 0;
+    left: 0;
+    width: 20%;
+    height: 100%; */
+    /* right */
+    /* top: 0;
+    right: 0;
+    width: 20%;
+    height: 100%; */
+}
+
+
+nav ul {
+    list-style-type: none;
+}
+
+nav ul li {
+    float: right;
+}
+
+.logo {
+    float: left;
+}
+
+nav ul li a.logoa {
+    padding: 1rem 1.6rem;
+    display: inline-block;
+    color: #333;
+    font-size: 1.1em;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.7s;
+}
+
+nav ul li a {
+    padding: 2rem 1.6rem;
+    display: inline-block;
+    color: #333;
+    font-size: 1.1em;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.7s;
+}
+
+
+nav ul li a:hover {
+    color: #1bd1ea
+}
+
+
+/* .bg-menu .navbar {
+    padding: 0 20px;
+    height: 80px;
+}
+
+.bg-menu .navbar a {
+    display: inline-block;
+    color: #333;
+    font-size: 1.4em;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.7s;
+}
+
+.bg-menu .title a:hover {
+    color: #1bd1ea
+} */
+
+
+/* .logo {
+    margin-top: 5px;
+    width: 100px;
+    height: 60px;
+} */
+
+.banner {
+    margin-top: 80px;
+    height: 630px;
+    background-image: url('http://localhost/E-Raport/public/image_anton/Banner Baru.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.text-banner {
+    padding-top: 30%;
+    padding-left: 5%;
+    width: 100%;
+}
+
+@media screen and (min-width: 640px) {
+    .text-banner {
+        padding-top: 10%;
+        padding-left: 5%;
+        width: 50%;
+    }
+}
+
+.text-banner h1 {
+    font-size: 2.3em;
+    color: #333;
+    list-style-type: 1.7;
+}
+
+.text-banner p {
+    font-size: 0.9em;
+    color: #666;
+    line-height: 1.7;
+    padding-top: 1rem;
+}
+
+.hide {
+    display: none;
+}
