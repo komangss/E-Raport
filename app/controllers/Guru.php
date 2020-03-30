@@ -22,5 +22,10 @@ class Guru extends Controller
         $this->view('guru/wali/index', $data);
     
     }
+
+    public function mapel()
+    {
+        $this->view('guru/mapel/index');
+    }
     
 }
