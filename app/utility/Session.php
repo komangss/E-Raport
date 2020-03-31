@@ -9,7 +9,6 @@ class Session
      * @access public
      * @param string $key
      * @return boolean
-     * @since 1.0.1
      */
     public static function delete_session($key)
     {
@@ -24,7 +23,6 @@ class Session
      * Destroy: Deletes the session.
      * @access public
      * @return void
-     * @since 1.0.1
      */
     public static function destroy_session()
     {
@@ -36,7 +34,6 @@ class Session
      * @access public
      * @param string $key
      * @return boolean
-     * @since 1.0.1
      */
     public static function exists_session($key)
     {
@@ -48,7 +45,6 @@ class Session
      * @access public
      * @param string $key
      * @return string|nothing
-     * @since 1.0.1
      */
     public static function get_session($key)
     {
@@ -61,7 +57,6 @@ class Session
      * Init: Starts the session.
      * @access public
      * @return void
-     * @since 1.0.1
      */
     public static function init_session()
     {
@@ -77,10 +72,52 @@ class Session
      * @param string $key
      * @param string $value
      * @return string
-     * @since 1.0.1
      */
     public static function put_session($key, $value)
     {
         return ($_SESSION[$key] = $value);
+    }
+
+    /**
+     * function setFlash()
+     *
+     * berguna untuk persiapan melakukan flash message.
+     * data nya akan di taruh di session!
+     * 
+     * @param string $pesan apa yang ditampilkan
+     * @param string $tipe tipe dari alert
+     **/
+    public static function setFlash($pesan, $tipe)
+    {
+        self::init_session();
+        self::put_session('flash', [
+            'pesan' => $pesan,
+            'tipe' => $tipe
+        ]);
+    }
+
+    /**
+     * function flash()
+     *
+     * berguna untuk menampilkan flash message.
+     * disini akan di cek apakah terdapat flash message.
+     * setelah di tampilkan session flash akan dihapus.
+     * 
+     * @param string $pesan apa yang ditampilkan
+     * @param string $tipe tipe dari alert
+     **/
+    public static function flash()
+    {
+        self::init_session();
+        if (self::exists_session('flash')) {
+            $flash = self::get_session('flash');
+            echo '
+            <div class="alert alert-' . $flash['tipe'] . '">
+                <strong>' . $flash['pesan'] . '</strong>
+                <button class="btn-alert">X</button>
+            </div>';
+            // hapus sessionnnya
+            self::delete_session('flash');
+        }
     }
 }
