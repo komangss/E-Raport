@@ -1,0 +1,56 @@
+.alert {
+    padding: 20px;
+    width: 40%;
+    height: 50px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.alert-danger {
+    background-color: rgb(255, 136, 136);
+    border: 1px solid red;
+    color: rgb(146, 5, 5);
+}
+.alert-danger button {
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+    border: none;
+    background-color: transparent;
+    color: darkred;
+    font-size: large;
+}
+
+.alert-success {
+    background-color: rgb(170, 255, 136);
+    border: 1px solid rgb(9, 131, 30);
+    color: rgb(24, 97, 28);
+}
+
+.alert-success button {
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+    border: none;
+    background-color: transparent;
+    color: rgb(19, 102, 53);
+    font-size: large;
+}
+
+.alert-warning {
+    background-color: rgb(255, 247, 136);
+    border: 1px solid rgb(131, 113, 9);
+    color: rgb(97, 96, 24);
+}
+
+.alert-warning button {
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+    border: none;
+    background-color: transparent;
+    color: rgb(102, 90, 19);
+    font-size: large;
+}

@@ -78,6 +78,7 @@ class Auth_model
                     "id_guru" => $result['id_guru'],
                     "id_data_kelas" => $result_kelas['id_data_kelas']
                 ];
+                Session::setFlash('selamat login anda telah berhasil', 'success');
                 Session::put_session("session_data", $session_data);
                 header('Location: ' . BASEURL . '/guru/dashboard'); // header nya gamaw
             } else {
