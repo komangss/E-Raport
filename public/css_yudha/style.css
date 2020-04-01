@@ -54,8 +54,8 @@ body{
 	
 } 
 .loginimage{
-	height: 49.5rem;
-	width: 64%;
+	height: 38rem;
+	width: 60%;
 }
 .bglogin{
 	background-image: url(http://localhost/E-Raport/public/image_yudha/Login.png);
@@ -65,15 +65,24 @@ body{
 }
 .loginpage{
 	width: 32%;
+	box-shadow: red;
+}
+.iconlogin{
+	height: 90px;
+	width: 90px;
+	border-radius: 50%;
+	position: absolute;
+	top: 65px;
+	right: 19.5%;
 }
 .loginform{
 	height: 25rem;
-	margin-top: 10rem;
-	margin-left: 0rem;
-	width: 25rem;
+	margin-top: 7rem;
+	margin-left: 4rem;
+	width: 22rem;
 	background-color: #DAF3FF;
-	border-radius: 70px;
-	background-image: url(../image/image1.jpg);
+	border-radius: 60px;
+	background-image: url(../image_yudha/image1.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
 }
@@ -81,11 +90,14 @@ form{
 	margin: 25px;
 }
 .logintulisan{
-	padding-top: 20px;
-	padding-bottom: 27px;
+	padding-top: 15%;
+	padding-bottom: 20px;
 	text-align: center;
 	font-family: garamond;
 	font-size: 30px;
+}
+.Username, .Password{
+	font-family: sans-serif;
 }
 .form_input{
 	width: 18rem;
@@ -93,10 +105,10 @@ form{
 	margin: 10px 5px;
 	border: 1px solid;
 	border-color: #009DF8;
-	border-radius: 3px;
+	border-radius: 5px;
 	background-color: #ecf0f1;
 	transition: all .4s ease-in-out;
-	transition-property: background: 
+	transition-property: background;
 }
 .form_input:hover{
 	background-color: #ffff;
@@ -106,12 +118,12 @@ form{
 	margin-left: 6px;
 }
 button{
-	margin: 4rem 50px;
+	margin: 2.5rem 50px;
 	width: 70%;
 	height: 2rem;
 	border: 2px solid;
 	border-color: #009DF8;
-	border-radius: 10px;
+	border-radius: 15px;
 	font-family: arcade;
 	font-size: 18px;
 	transition: all .4s ease-in-out;
