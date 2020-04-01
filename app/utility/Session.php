@@ -112,7 +112,7 @@ class Session
         if (self::exists_session('flash')) {
             $flash = self::get_session('flash');
             echo '
-            <div class="alert alert-' . $flash['tipe'] . '">
+            <div class="alert alert-' . $flash['tipe'] . '" style="width: 100%;">
                 <strong>' . $flash['pesan'] . '</strong>
                 <button class="btn-alert">X</button>
             </div>';

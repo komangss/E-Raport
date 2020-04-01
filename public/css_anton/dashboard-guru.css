@@ -1,0 +1,12 @@
+.content-center {
+    min-height: 90vh;
+    text-align: center;
+    background-image: url("http://localhost/E-Raport/public/image_anton/welcome.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.welcome-title {
+    padding-top: 50px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 2em;
+}

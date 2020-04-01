@@ -12,7 +12,7 @@ class Guru extends Controller
         Session::init_session();
         $id_guru = Session::get_session("session_data")['id_guru'];
         $data['nama'] = $this->model("Guru_model")->getGuruById($id_guru)['nama_guru'];
-        $this->view('guru/dashboard-pure', $data);
+        $this->view('guru/dashboard-guru', $data);
         
     }
     
