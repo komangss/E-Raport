@@ -18,6 +18,7 @@ class Guru extends Controller
     
     public function wali() {
         Session::init_session();
+        $data['id_guru'] = Session::get_session('session_data')['id_guru'];
         $data['id_data_kelas'] = Session::get_session("session_data")['id_data_kelas'];
         $this->view('guru/wali/index', $data);
     
