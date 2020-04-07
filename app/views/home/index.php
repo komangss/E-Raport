@@ -31,10 +31,10 @@
                 <div class="col-lg-12">
                     <div class="banner">
                         <div class="text-banner">
-                            <h1>Website E Raport</h1>
-                            <p>Disini Kami memberikan Segudang pengalaman dengan web ini.<br>
+                            <h1>Website E-Raport</h1>
+                            <p>Disini Kami Akan memberikan pengalaman experience terbaik dengan web ini.<br>
                                 Kalian bisa mengecek nilai dari Raport Kalian secara online<br>
-                                Melalui Website E Raport Ini.</p>
+                                Melalui Website E-Raport.</p>
                             <button class="btn-gradient">Get Started !</button>
                         </div>
                     </div>
