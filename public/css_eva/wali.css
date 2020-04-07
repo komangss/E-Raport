@@ -1,0 +1,65 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+.header{
+    font-size: 35px;
+}
+.tambahkan{
+  width: 75px;
+  font-size: 15px;
+  height: 4vh;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  transition: 0.5s ease-in-out;
+}
+.pilih{
+  text-align: center;
+  width: 1000px;
+  height: 500px;;
+  color: black;
+  background-color: lightblue;
+  margin: 0 auto;
+  margin-top: 50px;
+  border-radius: 20px;
+}
+.body{
+  width: 100%;
+  height: auto;
+  background-color: ;
+  margin: 0 auto;
+}
+.create{
+  text-align: center;
+  height: 100px;
+
+}
+.siswa{
+  font-size: 15px;
+  height: 30px;
+  box-sizing: border-box;
+  width: 40%;
+}
+.kelas{
+  font-size: 22px;
+}
+.nilai{
+  text-align: center;
+  height: 100px;
+}
+.teori{
+  margin: 0 auto;
+  width: 100px;
+  height: 50px;
+}
+.input{
+  text-align: center;
+  margin: 0 auto;
+  height: 4vh;
+  width: 100px;
+  text-decoration: none;
+  color: white;
+  border: none;
+}
