@@ -7,13 +7,16 @@ class Mapel extends Controller {
 
     public function nilaimurid()
     {
-        $this->view("guru/mapel/nilai_murid");
+        // cari kelasnya
+        $data['data_kelas'] = $this->model('DataKelas_Model')->getAllDataKelas();
+        // cari muridnya
+
+        // tampilkan view
+        $this->view("guru/mapel/nilai_murid", $data);
     }
 
     // url : http://localhost/E-Raport/mapel/testfetch
     public function testfetch() {
-        // $json = json_encode(array("anton", "alex"));
-        // var_dump($json);die;
         header('Content-Type: application/json');
         $json = json_encode(array("anton", "alex"));
         echo $json;

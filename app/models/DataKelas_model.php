@@ -13,7 +13,7 @@ class DataKelas_model
     {
 
         $this->db->query(
-            'SELECT data_kelas.index, jurusan.nama_jurusan, guru.nama_guru, kelas.nama_kelas
+            'SELECT data_kelas.index, data_kelas.id_data_kelas, jurusan.nama_jurusan, guru.nama_guru, kelas.nama_kelas
             FROM data_kelas 
             INNER JOIN kelas 
                 ON data_kelas.id_kelas = kelas.id_kelas
