@@ -9,9 +9,9 @@
 .content-main {
     min-height: 90vh;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
 }
 
 .box {
@@ -20,9 +20,10 @@
     background-color: #fff;
     height: 250px;
     width: 300px;
-    -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.45 );
-    -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.45 );
-    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.45 );
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.45);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.45);
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.45);
+    margin: 20px 0;
 }
 
 .img-box {
@@ -36,4 +37,18 @@
     text-decoration: none;
     text-align: center;
     display: block;
+}
+
+
+@media screen and (min-width: 640px) {
+    .content-main {
+        min-height: 90vh;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+    .box {
+        padding: 0;
+    }
 }
