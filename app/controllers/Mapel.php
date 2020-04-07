@@ -15,6 +15,7 @@ class Mapel extends Controller {
         // $json = json_encode(array("anton", "alex"));
         // var_dump($json);die;
         header('Content-Type: application/json');
-        return json_encode(array("anton", "alex"));
+        $json = json_encode(array("anton", "alex"));
+        echo $json;
     }
-}
+} 
