@@ -7,6 +7,6 @@
 </head>
 <body>
     <h1>hi, anda mengajar pelajaran : $mapel</h1>
-    <a href="">nilai murid</a>
+    <a href="<?= BASEURL; ?>/mapel/nilaimurid">nilai murid</a>
 </body>
 </html>
