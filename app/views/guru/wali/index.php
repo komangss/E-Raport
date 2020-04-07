@@ -34,16 +34,13 @@
         <div class="content-center">
             <div class="content-main">
                 <div class="box">
-                    <img src="<?= BASEURL_PUBLIC; ?>/image_anton/undraw_google_docs.svg" class="img-box">
-                    <a href="<?= BASEURL; ?>/raport/create">buat raport</a>
+                    <a href="<?= BASEURL; ?>/raport/create"><img src="<?= BASEURL_PUBLIC; ?>/image_anton/undraw_google_docs.svg" class="img-box">buat raport</a>
                 </div>
                 <div class="box">
-                    <img src="<?= BASEURL_PUBLIC; ?>/image_anton/undraw_to_do_list.svg" class="img-box">
-                    <a href="<?= BASEURL; ?>/datakelas/<?= $data['id_data_kelas']; ?>">kontrol data siswa kelas anda</a>
+                    <a href="<?= BASEURL; ?>/datakelas/<?= $data['id_data_kelas']; ?>"><img src="<?= BASEURL_PUBLIC; ?>/image_anton/undraw_to_do_list.svg" class="img-box">kontrol data siswa kelas anda</a>
                 </div>
                 <div class="box">
-                    <img src="<?= BASEURL_PUBLIC; ?>/image_anton/undraw_wall_postl.svg" class="img-box">
-                    <a href="<?= BASEURL; ?>/guru/<?= $data['id_guru']; ?>">ubah proil anda</a>
+                    <a href="<?= BASEURL; ?>/guru/<?= $data['id_guru']; ?>"> <img src="<?= BASEURL_PUBLIC; ?>/image_anton/undraw_wall_postl.svg" class="img-box">ubah proil anda</a>
                 </div>
             </div>
         </div>
