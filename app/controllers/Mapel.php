@@ -21,4 +21,17 @@ class Mapel extends Controller {
         $json = json_encode(array("anton", "alex"));
         echo $json;
     }
+    
+    public function getMuridFromKelas()
+    {
+        if ($_POST) {
+            header('Content-Type: application/json');
+            $json = json_encode(array($_POST['idkelas'], "post berhasil"));
+            echo $json;
+        } else {
+            header('Content-Type: application/json');
+            $json = json_encode(array("gagal post"));
+            echo $json;
+        }
+    }
 } 
