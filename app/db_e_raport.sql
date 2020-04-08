@@ -1,10 +1,10 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 25 Mar 2020 pada 15.47
--- Versi server: 10.1.39-MariaDB
+-- Waktu pembuatan: 08 Apr 2020 pada 03.14
+-- Versi server: 10.4.6-MariaDB
 -- Versi PHP: 7.3.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -133,7 +133,8 @@ CREATE TABLE `nilai_siswa` (
   `nilai_keterampilan` varchar(32) NOT NULL,
   `nilai_sikap` varchar(32) NOT NULL,
   `nilai_pengetahuan` varchar(32) NOT NULL,
-  `id_mapel` int(11) NOT NULL
+  `id_mapel` int(11) NOT NULL,
+  `semester` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
