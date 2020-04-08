@@ -15,18 +15,35 @@
         <?php endforeach; ?>
     </select>
     <button id="btn_select_class">pilih</button>
-    <select name="" id="">
+    <select name="" id="select_siswa">
         <option value="-">pilih murid</option>
     </select>
     <button id="btn_select_murid">pilih</button>
 </body>
 <script>
-    let select = document.getElementById('select_kelas')
+    let selectKelas = document.getElementById('select_kelas')
+    let selectSiswa = document.getElementById('select_siswa')
     document.getElementById('btn_select_class').addEventListener('click', function() {
-        let idKelas = select.options[select.selectedIndex].value
-        
+        let idKelas = selectKelas.options[selectKelas.selectedIndex].value
+
         testFetch(idKelas)
-            .then(data => console.log(data))
+            .then(data => {
+                data.forEach(dataSiswa => {
+                    // buat element option
+                    let option = document.createElement("option");
+                    option.text = dataSiswa.nama_siswa
+                    option.value = dataSiswa.id_siswa
+
+                    // remove option yang lain
+                    var length = selectSiswa.options.length-1;
+                    for (i = 0; i < length; i++) {
+                        selectSiswa.options[i] = null;
+                    }
+
+                    // taruh optionnya di select
+                    selectSiswa.add(option, selectSiswa[1])
+                })
+            })
             .catch(err => console.log(err))
     })
 
