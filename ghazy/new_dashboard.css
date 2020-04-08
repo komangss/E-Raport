@@ -104,7 +104,6 @@ body {
         font-size: 2em;
         z-index: 3;
         transition: 0.3s ease-in-out;
-        transform: rotate(40deg);
     }
     .close-btn:hover {
         color: #000000;
