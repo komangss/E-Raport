@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title>Create Rapot</title>
-	<link rel="stylesheet" href="wali.css">
+	<link rel="stylesheet" href="../public/css_eva/wali.css">
 </head>
 <body>
 
