@@ -3,10 +3,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="<?= BASEURL_PUBLIC; ?>/css_ghazy/navbar.css">
-    <link rel="stylesheet" href="<?= BASEURL_PUBLIC; ?>/css_anton/alert.css">
-    <link rel="stylesheet" href="<?= BASEURL_PUBLIC; ?>/css_anton/dashboard-wali.css">
-    <link rel="stylesheet" href="<?= BASEURL_PUBLIC; ?>/css_anton/responsive.css">
+    <link rel="stylesheet" href="<?= BASEURL_PUBLIC; ?>/css/css_ghazy/navbar.css">
+    <link rel="stylesheet" href="<?= BASEURL_PUBLIC; ?>/css/css_anton/alert.css">
+    <link rel="stylesheet" href="<?= BASEURL_PUBLIC; ?>/css/css_anton/dashboard-wali.css">
+    <link rel="stylesheet" href="<?= BASEURL_PUBLIC; ?>/css/css_anton/responsive.css">
     <title>E Raport - Dashboard Guru</title>
 </head>
 
@@ -47,7 +47,7 @@
     </section>
 
 </body>
-<script src="<?= BASEURL_PUBLIC; ?>/js_anton/alert.js"></script>
-<script src="<?= BASEURL_PUBLIC; ?>/js_ghazy/navbar-script.js"></script>
+<script src="<?= BASEURL_PUBLIC; ?>/js/js_anton/alert.js"></script>
+<script src="<?= BASEURL_PUBLIC; ?>/js/js_ghazy/navbar-script.js"></script>
 
 </html>

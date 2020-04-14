@@ -2,7 +2,7 @@
 
 require __DIR__ . '\..\utility\Session.php';
 
-class Siswa extends Controller
+class Murid extends Controller
 {
     public function index()
     {

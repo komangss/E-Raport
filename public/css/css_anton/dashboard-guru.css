@@ -1,7 +1,7 @@
 .content-center {
     min-height: 90vh;
     text-align: center;
-    background-image: url("http://localhost/E-Raport/public/image_anton/welcome.svg");
+    background-image: url("http://localhost/E-Raport/public/img/image_anton/welcome.svg");
     background-repeat: no-repeat;
     background-size: cover;
 }

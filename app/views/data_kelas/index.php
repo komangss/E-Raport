@@ -81,6 +81,6 @@ $kelas = $data['data_kelas'][0];
     </form>
 </body>
 
-<script src="<?= BASEURL; ?>/js/script-datakelas.js"></script>
+<script src="<?= BASEURL; ?>/js/js_anton/script-datakelas.js"></script>
 
 </html>

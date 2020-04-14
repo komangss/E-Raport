@@ -3,17 +3,17 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="<?= BASEURL_PUBLIC; ?>/css_ghazy/navbar.css">
-    <link rel="stylesheet" href="<?= BASEURL_PUBLIC; ?>/css_anton/alert.css">
-    <link rel="stylesheet" href="<?= BASEURL_PUBLIC; ?>/css_anton/dashboard-guru.css">
+    <link rel="stylesheet" href="<?= BASEURL_PUBLIC; ?>/css/css_ghazy/navbar.css">
+    <link rel="stylesheet" href="<?= BASEURL_PUBLIC; ?>/css/css_anton/alert.css">
+    <link rel="stylesheet" href="<?= BASEURL_PUBLIC; ?>/css/css_anton/dashboard-guru.css">
     <title>E Raport - Dashboard Guru</title>
 </head>
 
 <body>
     <nav class="navbar">
-        <h3 class="logo"><img src="<?= BASEURL_PUBLIC; ?>/image_anton/logo.png" width="90"></h3>
+        <h3 class="logo"><img src="<?= BASEURL_PUBLIC; ?>/img/image_anton/logo.png" width="90"></h3>
 
-        <div class="icon"><i><img src="<?= BASEURL_PUBLIC; ?>/image_anton/icon-menu.png" width="23px"></i></div>
+        <div class="icon"><i><img src="<?= BASEURL_PUBLIC; ?>/img/image_anton/icon-menu.png" width="23px"></i></div>
 
         <div class="links-wrapper active">
             <div class="backdrop"></div>
@@ -36,7 +36,7 @@
     </section>
 
 </body>
-<script src="<?= BASEURL_PUBLIC; ?>/js_anton/alert.js"></script>
-<script src="<?= BASEURL_PUBLIC; ?>/js_ghazy/navbar-script.js"></script>
+<script src="<?= BASEURL_PUBLIC; ?>/js/js_anton/alert.js"></script>
+<script src="<?= BASEURL_PUBLIC; ?>/js/js_ghazy/navbar-script.js"></script>
 
 </html>

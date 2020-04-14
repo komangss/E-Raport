@@ -58,7 +58,7 @@ body{
 	width: 60%;
 }
 .bglogin{
-	background-image: url(http://localhost/E-Raport/public/image_yudha/Login.png);
+	background-image: url(http://localhost/E-Raport/public/img/image_yudha/Login.png);
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -82,7 +82,7 @@ body{
 	width: 22rem;
 	background-color: #DAF3FF;
 	border-radius: 60px;
-	background-image: url(../image_yudha/image1.jpg);
+	background-image: url(http://localhost/E-Raport/public/img/image_yudha/image1.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
 }
