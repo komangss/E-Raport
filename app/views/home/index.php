@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard Siswa</title>
-    <link rel="stylesheet" href="<?= BASEURL_PUBLIC; ?>/css_anton/style.css">
+    <link rel="stylesheet" href="<?= BASEURL_PUBLIC; ?>/css/css_anton/style.css">
 </head>
 
 <body>
@@ -16,12 +16,12 @@
                     <div class="bg-menu">
                         <nav>
                             <ul>
-                                <li class="logo"><a class="logoa" href="<?= BASEURL; ?>"><img src="http://localhost/E-Raport/public/image_anton/logo.png" width="150px"></a></li>
+                                <li class="logo"><a class="logoa" href="<?= BASEURL; ?>"><img src="http://localhost/E-Raport/public/img/image_anton/logo.png" width="150px"></a></li>
                                 <li><a  href="<?= BASEURL; ?>">testimony</a></li>
                                 <li><a  href="<?= BASEURL; ?>/auth">login</a></li>
                                 <li><a>Home</a></li>
                                 <li> <a href="javascript:void(0);" class="hide" onclick="myFunction()">
-                                        <img src="http://localhost/E-Raport/public/image_anton/icon-menu.png" width="30px">
+                                        <img src="http://localhost/E-Raport/public/img/image_anton/icon-menu.png" width="30px">
                                     </a>
                                 </li>
                             </ul>
