@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel ="stylesheet" href="<?= BASEURL_PUBLIC; ?>/css_2d/style-siswa-2d.css"/>
+    <link rel ="stylesheet" href="<?= BASEURL_PUBLIC; ?>/css/css_2d/style-siswa-2d.css"/>
     <title>Cek Semester</title>
 </head>
 

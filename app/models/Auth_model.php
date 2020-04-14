@@ -32,7 +32,8 @@ class Auth_model
                     "id_siswa" => $result['id_siswa']
                 ];
                 Session::put_session("session_data", $session_data);
-                header('Location: ' . BASEURL . '/siswa'); // header nya gamaw
+                Session::setFlash('selamat login anda telah berhasil', 'success');
+                header('Location: ' . BASEURL . '/murid'); // header nya gamaw
             } else {
                 // password salah
                 echo "password salah";
