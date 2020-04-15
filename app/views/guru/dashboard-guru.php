@@ -19,7 +19,7 @@
             <div class="backdrop"></div>
             <div class="close-btn"><i>+</i></div>
             <ul class="links">
-                <li><a href="#">Home</a></li>
+                <li><a href="<?= BASEURL; ?>">Home</a></li>
                 <li><a href="<?= BASEURL; ?>/guru/wali">Wali</a></li>
                 <li><a href="<?= BASEURL; ?>/guru/mapel">Mapel</a></li>
                 <li><a href="<?= BASEURL; ?>/auth/logout">Logout</a></li>
