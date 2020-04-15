@@ -31,7 +31,7 @@
                     <option value="XI RPL 2">2</option>
                 </select>
                 
-               <button    class="button" style="vertical-align:middle" ><span><a href="Show-Raport.php">Next</a></span></!DOCTYPE></button>
+               <button    class="button" style="vertical-align:middle" ><span><a href="<?= BASEURL; ?>/murid/showraport">Next</a></span></!DOCTYPE></button>
             </div>
             
     </div>
