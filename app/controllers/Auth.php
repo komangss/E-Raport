@@ -31,4 +31,10 @@ class Auth extends Controller
         header('Location: ' . BASEURL . '/auth');
         exit;
     }
+
+    public function login_admin () {
+        // AuthUtility::checkAuthenticated();
+
+        $this->view("admin/index");
+    }
 }
