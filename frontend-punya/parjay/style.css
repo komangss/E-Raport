@@ -1,17 +1,50 @@
 body {
-
-    align-content: center;
+    margin: 0;
 }
 
-h1 {
-    text-align: center;
-    font-size: 48px;
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 20%;
+    background-color: #f1f1f1;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
 }
 
+li a {
+    display: block;
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 20px;
+    }
+
+li a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+li a:hover:not(.active) {
+    background-color: #555;
+    color: white;
+}
+
+/* Content after sidebar */
+.Content {
+    margin-left:20%;
+    padding:1px 5px;
+}
+
+
+/* Card View */
 .column {
     float: left;
     width: 40%;
-    padding: 0 10px;
 }
 
   /* Clear floats after the columns */
@@ -20,6 +53,7 @@ h1 {
     display: table;
     clear: both;
 }
+
   /* Responsive columns */
 @media screen and (max-width: 700px) {
     .column {
@@ -28,18 +62,26 @@ h1 {
         margin-bottom: 20px;
     }
     .img {
-        min-height: 200px;
+        height: 300px;
         max-width: 300px;
         display: block;
     }
 }
 
-  /* Style the counter cards */
+    /* To Center the Card */
+.CardContainer {
+    width: inherit;
+
+    align-content: center;
+
+    margin-left: 5%;
+}
+
+     /* Style the counter cards */
 .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    padding: 16px;
-
-    text-align: center;
+    padding-top: 75%; /* 1:1 Aspect Ratio */
+    position: relative; /* If you want text inside of it */
 
     background-color: #f1f1f1;
 
@@ -49,19 +91,43 @@ h1 {
     margin-left : 20px;
 }
 
+    /* Style the text on the card */
+.text {
+    position: absolute;
+    top: 70%;
+    left: 0;
+    bottom: 0;
+    right: 0;
+
+    text-align: center;
+    font-size: 20px;
+}
+
 .card:hover {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
 .img-container{
     width: inherit;
-    margin-top: 20px;
-}
+    padding-top: 20%;
 
-.img {
-    width: 80%;
-    height: 300px;
+    position: absolute;
+    top: 10%;
+    left: 12%;
+    bottom: 30%;
+    right: 12%;
+
+    text-align: center;
 
     background-color: black;
-    margin: 0 auto;
+}
+
+/* .img {
+    width: 100%;
+    
+} */
+
+h1 {
+    text-align: center;
+    font-size: 48px;
 }
