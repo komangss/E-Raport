@@ -1,4 +1,7 @@
 <?php
+namespace Utility;
+use Utility\Session as Session;
+
 class AuthUtility {
    
     /**

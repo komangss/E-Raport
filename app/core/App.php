@@ -1,11 +1,12 @@
 <?php
+
+namespace Core;
+
 class App {
-    // properti untuk menentukan controller method dan parameter defaultnya
     protected $controller = 'Home';
     protected $method = 'Index';
-    protected $params = []; // karena defaultnya ga ada isinya
+    protected $params = [];
     
-    // controller
     public function __construct(){
         $url = $this->parseURL();
         // kita cek dulu. ada gak sebuah file didalam folder controller yg namanya sesuai dengan nama yg kita tulis disini

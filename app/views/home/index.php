@@ -19,6 +19,7 @@
                                 <li class="logo"><a class="logoa" href="<?= BASEURL; ?>"><img src="http://localhost/E-Raport/public/img/image_anton/logo.png" width="150px"></a></li>
                                 <li><a href="<?= BASEURL; ?>">testimony</a></li>
                                 <?php
+                                use Utility\Session as Session;
                                 $base = BASEURL;
                                 Session::init_session();
                                 // jika aktif

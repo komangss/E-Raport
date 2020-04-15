@@ -1,6 +1,6 @@
 <?php
 
-require __DIR__ . '\..\utility\Session.php';
+use Utility\Session;
 
 class Murid extends Controller
 {

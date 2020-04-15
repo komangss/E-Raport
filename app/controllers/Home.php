@@ -1,6 +1,4 @@
 <?php
-require __DIR__ . '\..\utility\Session.php';
-
 class Home extends Controller {
     public function index(){
         

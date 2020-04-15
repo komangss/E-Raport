@@ -1,6 +1,6 @@
 <?php
 
-
+namespace Utility;
 class Session
 {
 

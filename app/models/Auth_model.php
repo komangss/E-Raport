@@ -1,5 +1,7 @@
 <?php
 
+use Utility\Session;
+
 class Auth_model
 {
     private $table_siswa = 'siswa', $table_guru = 'guru',

@@ -1,6 +1,6 @@
 <?php
 
-require __DIR__ . '\..\utility\Session.php';
+Use Utility\Session;
 
 class DataKelas extends Controller
 {

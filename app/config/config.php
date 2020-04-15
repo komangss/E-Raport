@@ -1,7 +1,4 @@
 <?php
-
-
-
 // masukin url kalian disini
 
 // Example 

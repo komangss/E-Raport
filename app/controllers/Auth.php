@@ -1,7 +1,7 @@
 <?php
 
-require __DIR__ . '\..\utility\Session.php';
-require __DIR__ . '\..\utility\AuthUtility.php';
+use Utility\Session;
+use Utility\AuthUtility;
 
 class Auth extends Controller
 {

@@ -1,5 +1,6 @@
 <?php
-require __DIR__ . '\..\utility\Session.php';
+
+use Utility\Session;
 
 class Guru extends Controller
 {
