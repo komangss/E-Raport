@@ -17,8 +17,24 @@
                         <nav>
                             <ul>
                                 <li class="logo"><a class="logoa" href="<?= BASEURL; ?>"><img src="http://localhost/E-Raport/public/img/image_anton/logo.png" width="150px"></a></li>
-                                <li><a  href="<?= BASEURL; ?>">testimony</a></li>
-                                <li><a  href="<?= BASEURL; ?>/auth">login</a></li>
+                                <li><a href="<?= BASEURL; ?>">testimony</a></li>
+                                <?php
+                                $base = BASEURL;
+                                Session::init_session();
+                                // jika aktif
+                                if (Session::get_session('session_data')['is_active'] == 1) {
+                                    echo "
+                                        <li><a href='$base/auth/logout'>logout</a></li>
+                                        ";
+                                    echo "
+                                        <li><a href='$base/guru/dashboard'>dashboard</a></li>
+                                        ";
+                                } else {
+                                    echo "
+                                        <li><a href='$base/auth'>login</a></li>
+                                    ";
+                                }
+                                ?>
                                 <li><a>Home</a></li>
                                 <li> <a href="javascript:void(0);" class="hide" onclick="myFunction()">
                                         <img src="http://localhost/E-Raport/public/img/image_anton/icon-menu.png" width="30px">
