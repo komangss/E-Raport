@@ -1,10 +1,10 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 08 Apr 2020 pada 03.14
--- Versi server: 10.4.6-MariaDB
+-- Waktu pembuatan: 21 Apr 2020 pada 03.54
+-- Versi server: 10.1.39-MariaDB
 -- Versi PHP: 7.3.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -56,19 +56,19 @@ CREATE TABLE `guru` (
   `id_guru` int(11) NOT NULL,
   `nama_guru` varchar(255) NOT NULL,
   `nip` int(11) NOT NULL,
-  `password` varchar(255) NOT NULL,
   `is_wali_kelas` int(1) NOT NULL,
   `id_kelas` int(11) NOT NULL,
-  `id_mapel` int(11) NOT NULL
+  `id_mapel` int(11) NOT NULL,
+  `id_user` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `guru`
 --
 
-INSERT INTO `guru` (`id_guru`, `nama_guru`, `nip`, `password`, `is_wali_kelas`, `id_kelas`, `id_mapel`) VALUES
-(1, 'bu putri', 123, '123', 1, 1, 1),
-(2, 'pak pras', 1, '123', 0, 0, 2);
+INSERT INTO `guru` (`id_guru`, `nama_guru`, `nip`, `is_wali_kelas`, `id_kelas`, `id_mapel`, `id_user`) VALUES
+(1, 'bu putri', 123, 1, 1, 1, 0),
+(2, 'pak pras', 1, 1, 0, 2, 0);
 
 -- --------------------------------------------------------
 
@@ -111,6 +111,17 @@ INSERT INTO `kelas` (`id_kelas`, `nama_kelas`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Struktur dari tabel `level_akses`
+--
+
+CREATE TABLE `level_akses` (
+  `id` int(11) NOT NULL,
+  `nama_level` varchar(32) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Struktur dari tabel `mapel`
 --
 
@@ -147,23 +158,23 @@ CREATE TABLE `siswa` (
   `id_siswa` int(11) NOT NULL,
   `nama_siswa` varchar(255) NOT NULL,
   `nis` int(11) NOT NULL,
-  `password` varchar(255) NOT NULL,
-  `is_kelas_already` int(1) NOT NULL
+  `is_kelas_already` int(1) NOT NULL,
+  `id_user` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `siswa`
 --
 
-INSERT INTO `siswa` (`id_siswa`, `nama_siswa`, `nis`, `password`, `is_kelas_already`) VALUES
-(1, 'alex', 123, '123', 1),
-(2, 'Antonio Komang Yudistira', 1, '123', 1),
-(3, 'ferr', 2, '133', 1),
-(4, 'angga', 3, '123', 1),
-(5, 'yudha', 4, '123', 1),
-(6, 'ghazy', 5, '123', 0),
-(7, 'dewade', 6, '123', 0),
-(8, 'dimas', 8, '123', 0);
+INSERT INTO `siswa` (`id_siswa`, `nama_siswa`, `nis`, `is_kelas_already`, `id_user`) VALUES
+(1, 'alex', 123, 1, 0),
+(2, 'Antonio Komang Yudistira', 1, 1, 0),
+(3, 'ferr', 2, 1, 0),
+(4, 'angga', 3, 1, 0),
+(5, 'yudha', 4, 1, 0),
+(6, 'ghazy', 5, 0, 0),
+(7, 'dewade', 6, 0, 0),
+(8, 'dimas', 8, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -182,6 +193,19 @@ CREATE TABLE `tahun` (
 
 INSERT INTO `tahun` (`id_tahun`, `tahun`) VALUES
 (1, '2020');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `user`
+--
+
+CREATE TABLE `user` (
+  `id` int(11) NOT NULL,
+  `username` varchar(64) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `id_level` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Indexes for dumped tables
@@ -213,6 +237,12 @@ ALTER TABLE `kelas`
   ADD PRIMARY KEY (`id_kelas`);
 
 --
+-- Indeks untuk tabel `level_akses`
+--
+ALTER TABLE `level_akses`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indeks untuk tabel `mapel`
 --
 ALTER TABLE `mapel`
@@ -236,6 +266,13 @@ ALTER TABLE `siswa`
 --
 ALTER TABLE `tahun`
   ADD PRIMARY KEY (`id_tahun`);
+
+--
+-- Indeks untuk tabel `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `username` (`username`);
 
 --
 -- AUTO_INCREMENT untuk tabel yang dibuang
@@ -266,6 +303,12 @@ ALTER TABLE `kelas`
   MODIFY `id_kelas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
+-- AUTO_INCREMENT untuk tabel `level_akses`
+--
+ALTER TABLE `level_akses`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT untuk tabel `mapel`
 --
 ALTER TABLE `mapel`
@@ -288,6 +331,12 @@ ALTER TABLE `siswa`
 --
 ALTER TABLE `tahun`
   MODIFY `id_tahun` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT untuk tabel `user`
+--
+ALTER TABLE `user`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
