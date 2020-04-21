@@ -28,7 +28,7 @@
         </div>
     </nav>
 
-    <?php Session::flash(); ?>
+    <?= $flash; ?>
 
     <section>
         <div class="content-center">
@@ -37,10 +37,10 @@
                     <a href="<?= BASEURL; ?>/raport/create"><img src="<?= BASEURL_PUBLIC; ?>/img/image_anton/undraw_google_docs.svg" class="img-box">buat raport</a>
                 </div>
                 <div class="box">
-                    <a href="<?= BASEURL; ?>/datakelas/<?= $data['id_data_kelas']; ?>"><img src="<?= BASEURL_PUBLIC; ?>/img/image_anton/undraw_to_do_list.svg" class="img-box">kontrol data siswa kelas anda</a>
+                    <a href="<?= BASEURL; ?>/datakelas/<?= $id_data_kelas; ?>"><img src="<?= BASEURL_PUBLIC; ?>/img/image_anton/undraw_to_do_list.svg" class="img-box">kontrol data siswa kelas anda</a>
                 </div>
                 <div class="box">
-                    <a href="<?= BASEURL; ?>/guru/<?= $data['id_guru']; ?>"> <img src="<?= BASEURL_PUBLIC; ?>/img/image_anton/undraw_wall_postl.svg" class="img-box">ubah proil anda</a>
+                    <a href="<?= BASEURL; ?>/guru/<?= $id_guru; ?>"> <img src="<?= BASEURL_PUBLIC; ?>/img/image_anton/undraw_wall_postl.svg" class="img-box">ubah proil anda</a>
                 </div>
             </div>
         </div>

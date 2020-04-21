@@ -13,6 +13,7 @@ class Guru extends Controller
         Session::init_session();
         $id_guru = Session::get_session("session_data")['id_guru'];
         $data['nama'] = $this->model("Guru_model")->getGuruById($id_guru)['nama_guru'];
+        $data['flash'] = Session::flash();
         $this->view('guru/dashboard-guru', $data);
         
     }
@@ -21,6 +22,7 @@ class Guru extends Controller
         Session::init_session();
         $data['id_guru'] = Session::get_session('session_data')['id_guru'];
         $data['id_data_kelas'] = Session::get_session("session_data")['id_data_kelas'];
+        $data['flash'] = Session::flash();
         $this->view('guru/wali/index', $data);
     
     }

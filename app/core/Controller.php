@@ -2,6 +2,8 @@
 
 class Controller {
     public function view($view, $data = []){
+        extract($data);
+        $data = null;
         require_once 'app/views/'. $view .'.php';
     }
     public function model($model){

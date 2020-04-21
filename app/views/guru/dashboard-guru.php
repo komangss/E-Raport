@@ -27,11 +27,11 @@
         </div>
     </nav>
 
-    <?php Session::flash(); ?>
+    <?= $flash; ?>
     
     <section>
         <div class="content-center">
-            <h1 class="welcome-title">selamat datang <?= $data['nama']; ?></h1>
+            <h1 class="welcome-title">selamat datang <?= $nama; ?></h1>
         </div>
     </section>
 
