@@ -10,25 +10,16 @@
 	<div class="wrapper">
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-6 loginimage bglogin"></div>
-				<img src="public/image_ferdian/icon.png" alt="" class="iconlogin">
+				<div class="col-lg-6 loginimage bglogin">
+					<img src="image/Login.png" alt="">
+				</div>
 				<div class="col-lg-6 loginpage">
 					<div class="container">
 						<div class="loginform">
 							<div class="logintulisan"><strong>User Login</strong></div>
-							<form action="<?= BASEURL ?>/auth/login" method="POST">
-								<label class="Username">Username/Nik/Nis</label>
-								<input type="text" name="username" class="form_input" autocomplete="off">
-								<label class="Password">Password</label>
-								<input type="password" name="password" class="form_input">
-								<div class="dropdown">
-									<select name="role" id="selectRole">
-										<option value="">Choose</option>
-										<option value="1">Siswa</option>
-										<option value="2">Guru</option>
-										<option value="3">Admin</option>
-									</select>
-								</div>
+							<form action="">
+								<input type="text" name="username" class="form_input" placeholder=" Username/Nik/Nis">
+								<input type="password" name="username" class="form_input" placeholder=" Password">
 								<div class="button">
 									 <button type="submit">LOGIN</button>
 								</div>
