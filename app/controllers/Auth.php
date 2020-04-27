@@ -7,7 +7,7 @@ class Auth extends Controller
 {
     public function index()
     {
-        // cek apakah dia sudah login? jika sudah maka tendang ke hello
+        // cek apakah dia sudah login?
         AuthUtility::checkUnauthenticated();
         
         $this->view('auth/login');

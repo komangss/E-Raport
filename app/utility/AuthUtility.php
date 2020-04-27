@@ -10,9 +10,8 @@ class AuthUtility {
      * session doesn't exist.
      * @access public
      * @param string $redirect
-     * @since 1.0.2
      */
-    public static function checkAuthenticated($redirect = "/login") {
+    public static function checkAuthenticated($redirect = "/auth") {
         Session::init_session();
         if (!Session::exists_session("session_data")) {
             Session::destroy_session();
@@ -25,7 +24,6 @@ class AuthUtility {
      * redirecting to a specific location if the user session exist.
      * @access public
      * @param string $redirect
-     * @since 1.0.2
      */
     public static function checkUnauthenticated($redirect = "") {
         Session::init_session();

@@ -14,122 +14,162 @@ body {
 	display: table;
 }
 
-[class*="col-"]{
+[class*="col-"] {
 	float: left;
 }
 
-.col-1 {width:8.33%;}
-.col-2 {width:16.66%}
-.col-3 {width:25%;}
-.col-4 {width:33.3%;}
-.col-5 {width:41.66%;}
-.col-6 {width:50%;}
-.col-7 {width:58.33%;}
-.col-8 {width:66.66%;}
-.col-9 {width:75%;}
-.col-10 {width:83.33%;}
-.col-11 {width:91.6%;}
-.col-12 {width:100%;}
+.col-1 {
+	width: 8.33%;
+}
+
+.col-2 {
+	width: 16.66%
+}
+
+.col-3 {
+	width: 25%;
+}
+
+.col-4 {
+	width: 33.3%;
+}
+
+.col-5 {
+	width: 41.66%;
+}
+
+.col-6 {
+	width: 50%;
+}
+
+.col-7 {
+	width: 58.33%;
+}
+
+.col-8 {
+	width: 66.66%;
+}
+
+.col-9 {
+	width: 75%;
+}
+
+.col-10 {
+	width: 83.33%;
+}
+
+.col-11 {
+	width: 91.6%;
+}
+
+.col-12 {
+	width: 100%;
+}
 
 .btn-gradient {
-  margin-top: 30px;
-  padding: 1.2rem 1.7rem;
-  border-radius: 30px;
-  border: none;
-  color: #fff;
-  font-size: .9em;
-  font-weight: bold;
-  cursor: pointer;
-  transition: .7s;
-  letter-spacing: 1.5px;
-  outline: none;
-  background: #b224ef;
-  background: -webkit-linear-gradient(331deg, #b224ef 11%, #5055fa 55%);
-  background: -o-linear-gradient(331deg, #b224ef 11%, #5055fa 55%);
-  background: linear-gradient(119deg, #b224ef 11%, #5055fa 55%);
-  background-size: 101% auto;
+	margin-top: 30px;
+	padding: 1.2rem 1.7rem;
+	border-radius: 30px;
+	border: none;
+	color: #fff;
+	font-size: .9em;
+	font-weight: bold;
+	cursor: pointer;
+	transition: .7s;
+	letter-spacing: 1.5px;
+	outline: none;
+	background: #b224ef;
+	background: -webkit-linear-gradient(331deg, #b224ef 11%, #5055fa 55%);
+	background: -o-linear-gradient(331deg, #b224ef 11%, #5055fa 55%);
+	background: linear-gradient(119deg, #b224ef 11%, #5055fa 55%);
+	background-size: 101% auto;
 }
-body{
+
+body {
 	background-color: #92DBFF;
-	
-} 
-.loginimage{
-	height: 38rem;
-	width: 60%;
+
 }
-.bglogin{
-	background-image: url(http://localhost/E-Raport/public/img/image_yudha/Login.png);
+
+.loginimage {
+	height: 49.5rem;
+	width: 62%;
+}
+
+.bglogin {
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
+	width: 62%;
 }
-.loginpage{
-	width: 32%;
-	box-shadow: red;
+
+.loginpage {
+	width: 30%;
+	height: 49.5rem;
 }
-.iconlogin{
-	height: 90px;
-	width: 90px;
-	border-radius: 50%;
-	position: absolute;
-	top: 65px;
-	right: 19.5%;
+
+.bglogin {
+	z-index: 99 !important;
 }
-.loginform{
+
+.bglogin img {
+	width: 130%;
+	height: 100vh;
+}
+
+.loginform {
 	height: 25rem;
-	margin-top: 7rem;
-	margin-left: 4rem;
-	width: 22rem;
+	margin-top: 12rem;
+	margin-left: 1rem;
+	width: 25rem;
 	background-color: #DAF3FF;
-	border-radius: 60px;
+	border-radius: 70px;
 	background-image: url(http://localhost/E-Raport/public/img/image_yudha/image1.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
 }
-form{
+
+form {
 	margin: 25px;
 }
-.logintulisan{
-	padding-top: 15%;
-	padding-bottom: 20px;
+
+.logintulisan {
+	padding-top: 20px;
+	padding-bottom: 27px;
 	text-align: center;
 	font-family: garamond;
 	font-size: 30px;
 }
-.Username, .Password{
-	font-family: sans-serif;
-}
-.form_input{
+
+.form_input {
 	width: 18rem;
 	height: 30px;
-	margin: 10px 5px;
+	margin: 10px 26px;
 	border: 1px solid;
 	border-color: #009DF8;
-	border-radius: 5px;
+	border-radius: 3px;
 	background-color: #ecf0f1;
 	transition: all .4s ease-in-out;
 	transition-property: background;
 }
-.form_input:hover{
+
+.form_input:hover {
 	background-color: #ffff;
 }
-.dropdown{
-	margin-top: 6px;
-	margin-left: 6px;
-}
-button{
-	margin: 2.5rem 50px;
+
+button {
+	margin: 4rem 50px;
 	width: 70%;
 	height: 2rem;
 	border: 2px solid;
 	border-color: #009DF8;
-	border-radius: 15px;
+	border-radius: 10px;
 	font-family: arcade;
 	font-size: 18px;
 	transition: all .4s ease-in-out;
 	transition-property: background;
 }
-button:hover{
+
+button:hover {
 	cursor: pointer;
 	background-color: #009DF8;
 }
