@@ -15,12 +15,16 @@ class Auth extends Controller
 
     public function login()
     {
-        // TODO: cek apakah ini berasal dari webnya
         AuthUtility::checkUnauthenticated();
-        if ($_POST['role'] == '1') {// siswa
-            $this->model('Auth_model')->loginSiswa($_POST);
-        } else if ($_POST['role'] == '2') {
-            $this->model('Auth_model')->loginGuru($_POST);    
+        $result = $this->model("Auth_model")->login($_POST);
+        if ($result['rowCount'] > 0 ) {
+            if ($result['user']['password'] == $_POST['password']) {
+                header('Location:'. BASEURL. 'dashboard');
+            } else {
+                echo "password salah";
+            }
+        } else {
+            echo "tidak ada username yang terdaftar";
         }
     }
 
@@ -30,11 +34,5 @@ class Auth extends Controller
         Session::destroy_session();
         header('Location: ' . BASEURL . '/auth');
         exit;
-    }
-
-    public function login_admin () {
-        // AuthUtility::checkAuthenticated();
-
-        $this->view("admin/index");
     }
 }

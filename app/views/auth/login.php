@@ -16,9 +16,9 @@
 					<div class="container">
 						<div class="loginform">
 							<div class="logintulisan"><strong>User Login</strong></div>
-							<form action="">
+							<form action="<?= BASEURL; ?>/auth/login" method="POST">
 								<input type="text" name="username" class="form_input" placeholder="Username/Nik/Nis">
-								<input type="password" name="username" class="form_input" placeholder="Password">
+								<input type="password" name="password" class="form_input" placeholder="Password">
 								<div class="button">
 									 <button type="submit">LOGIN</button>
 								</div>
