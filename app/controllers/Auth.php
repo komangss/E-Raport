@@ -9,22 +9,25 @@ class Auth extends Controller
     {
         // cek apakah dia sudah login?
         AuthUtility::checkUnauthenticated();
-        
-        $this->view('auth/login');
+        $data['flash'] = Session::flash();
+        $this->view('auth/login', $data);
     }
 
     public function login()
     {
         AuthUtility::checkUnauthenticated();
-        $result = $this->model("Auth_model")->login($_POST);
+        $result = $this->model('Auth_model')->login($_POST);
         if ($result['rowCount'] > 0 ) {
             if ($result['user']['password'] == $_POST['password']) {
-                header('Location:'. BASEURL. 'dashboard');
+                Session::setFlash('Login sukses dijalankan', 'success');
+                header('Location:'. BASEURL. '/dashboard');
             } else {
-                echo "password salah";
+                Session::setFlash('Password anda salah', 'danger');
+                header('Location:'. BASEURL . '/auth');
             }
         } else {
-            echo "tidak ada username yang terdaftar";
+            Session::setFlash('User tidak ditemukan', 'danger');
+            header('Location:'. BASEURL . '/auth');
         }
     }
 
